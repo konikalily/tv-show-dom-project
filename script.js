@@ -1,33 +1,31 @@
 //You can edit ALL of the code here
+const allEpisodes = getAllEpisodes();
 function setup() {
-  const allEpisodes = getAllEpisodes();
-  console.log(allEpisodes)
+  // const allEpisodes = getAllEpisodes();
+  // console.log(allEpisodes);
   makePageForEpisodes(allEpisodes);
 }
 
 function makePageForEpisodes(episodeList) {
+  const searchBarLabel = document.getElementById("searchLabel");
+  searchBarLabel.innerText = `Displaying ${episodeList.length}/73 Episodes`;
+
   const rootElem = document.getElementById("root");
   const myEpisodeUl = document.createElement("ul");
   //rootElem.textContent = `Got ${episodeList.length} episode(s)`;
+
   episodeList.forEach((episode) => {
     const myLi = document.createElement("li");
+    myLi.id = episode.id; //applied the episode id to the dom
     const header = document.createElement("h2");
 
-    const episodeNum = episode.number + "";
-    const formatEpisodeNum = episodeNum.padStart(2, "0");
+    const episodeCode = createEpisodeCode(episode);
 
-    const seasonNum = episode.season + "";
-    const formatSeasonNum = seasonNum.padStart(2, "0");
-
-    const episodeNumFormat = `S${formatSeasonNum}E${formatEpisodeNum}`; //S02E07
-
-    header.innerText = `${episode.name} -${episodeNumFormat}`;
+    header.innerText = `${episode.name} - ${episodeCode}`;
 
     myLi.appendChild(header);
 
-    const image = document.createElement("img");
-    image.src = episode.image.medium;
-    image.alt = episode.name;
+    const image = createImg(episode);
     myLi.appendChild(image);
 
     const summaryParaDiv = document.createElement("div");
@@ -40,3 +38,6 @@ function makePageForEpisodes(episodeList) {
 }
 
 window.onload = setup;
+
+const searchBar = document.getElementById("search");
+searchBar.addEventListener("input", handleSearch);

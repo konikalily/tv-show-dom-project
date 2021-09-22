@@ -3,17 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TV Show Project | My Name is konikalily </title>
+    <title>TV Show Project | My Name is konikalily</title>
     <link href="style.css" rel="stylesheet" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   </head>
 
   <body>
-    <div id="root">
-    </div>
-
+    <header>
+      <input type="search" name="search" id="search" />
+      <label for="search" id="searchLabel">Display 01/73 episodes</label>
+      <select name="episodeMenu" id="episodeMenu"></select>
+    </header>
+    <div id="root"></div>
+    <footer>
+      <p>
+        Information source from
+        <a href="https://www.tvmaze.com/" target="_blank">Tvmaze</a>
+      </p>
+    </footer>
     <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
     <script src="episodes.js"></script>
+    <script src="createImg.js"></script>
+    <script src="handleSearch.js"></script>
+    <script src="/createEpisodeCode.js"></script>
 
     <!-- Loads YOUR javascript code -->
     <script src="script.js"></script>
