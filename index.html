@@ -12,7 +12,9 @@
     <header>
       <input type="search" name="search" id="search" />
       <label for="search" id="searchLabel">Display 01/73 episodes</label>
-      <select name="episodeMenu" id="episodeMenu"></select>
+      <select name="episodeMenu" id="episodeMenu">
+        <option value="">--Please choose an episode--</option>
+      </select>
     </header>
     <div id="root"></div>
     <footer>
@@ -22,12 +24,12 @@
       </p>
     </footer>
     <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
-    <script src="episodes.js"></script>
+    <!-- <script src="episodes.js"></script>
     <script src="createImg.js"></script>
     <script src="handleSearch.js"></script>
-    <script src="/createEpisodeCode.js"></script>
+    <script src="/createEpisodeCode.js"></script> -->
 
     <!-- Loads YOUR javascript code -->
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
   </body>
 </html>

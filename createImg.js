@@ -1,4 +1,4 @@
-function createImg(episode) {
+export default function createImg(episode) {
     const image = document.createElement("img");
     image.className = "episodeImage";
     image.src = episode.image.medium;
