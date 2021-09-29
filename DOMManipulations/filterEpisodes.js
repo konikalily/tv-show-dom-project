@@ -1,3 +1,5 @@
+//this function is for, when users types something to search an episode 
+
 export default function filterEpisodes(event, allEpisodes) {
   const inputValue = event.target.value;
   const lowerCaseInput = inputValue.toLowerCase();

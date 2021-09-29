@@ -10,11 +10,21 @@
 
   <body>
     <header>
-      <input type="search" name="search" id="search" />
-      <label for="search" id="searchLabel">Display 01/73 episodes</label>
-      <select name="episodeMenu" id="episodeMenu">
+      <input type="search" name="episode-search-input" id="episode-search-input" />
+
+      <label for="search" id="episode-search-label">Display 01/73 episodes</label>
+      
+      <!--select menu for all the episodes-->
+      
+      <select name="episode-select" id="episode-select-input">
         <option value="">--Please choose an episode--</option>
       </select>
+
+      <select name="show-select-input" id="show-select-input">
+        <option value="">--Please choose a show--</option>
+      </select>
+
+      <button id="selectReset">Show All Episodes</button>
     </header>
     <div id="root"></div>
     <footer>

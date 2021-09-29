@@ -1,34 +1,27 @@
-import getAllEpisodes from "./episodes.js";
-import handleSearch from "./handleSearch.js";
-import createEpisodeCode from "./createEpisodeCode.js";
-
-import createEpisodeOptions from "./createEpisodeOptions.js";
-import createEpisodeCards from "./createEpisodeCards.js";
-import handleSelect from "./handleSelect.js";
+import getAllShows from "./shows.js";
+import createShowOptions from "./DOMManipulations/createShowOptions.js";
+import handleEpisodeSelect from "./events/handleEpisodeSelect.js";
+import handleSelectReset from "./events/handleSelectReset.js"
+import handleShowSelect from "./events/handleShowSelect.js"
 
 //You can edit ALL of the code here
-const allEpisodes = getAllEpisodes();
 function setup() {
-  // const allEpisodes = getAllEpisodes();
-  // console.log(allEpisodes);
-  makePageForEpisodes(allEpisodes);
+  const episodeSelectInput = document.getElementById("episode-select-input");
+  episodeSelectInput.addEventListener("change", handleEpisodeSelect); //to provide a way for the user to see all episodes again.
+
+  const selectReset = document.getElementById("selectReset");
+  selectReset.addEventListener("click", handleSelectReset);
+
+  const showSelectInput = document.getElementById("show-select-input");
+  showSelectInput.addEventListener("change", handleShowSelect);
+  
+  const allShows = getAllShows();
+  createShowOptions(allShows);
 }
 
-function makePageForEpisodes(allEpisodes) {
-  const searchBarLabel = document.getElementById("searchLabel");
-  searchBarLabel.innerText = `Displaying ${allEpisodes.length}/73 Episodes`;
+// To present all shows
 
-  //rootElem.textContent = `Got ${allEpisodes.length} episode(s)`;
-  createEpisodeOptions(allEpisodes);
-  createEpisodeCards(allEpisodes);
-}
 
 window.onload = setup;
 
-const searchBar = document.getElementById("search");
-searchBar.addEventListener("input", handleSearch);
 
-const selectInput = document.getElementById("episodeMenu");
-selectInput.addEventListener("change", handleSelect);
-
-export default allEpisodes;

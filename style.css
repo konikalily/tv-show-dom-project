@@ -1,6 +1,12 @@
 #root {
   color: red;
+  height: 90vh;
+  overflow: scroll;
+  overflow-x: hidden;
 }
+
+
+
 .episodeImage {
   border-radius: 50%;
 }
