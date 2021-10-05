@@ -10,34 +10,38 @@
 
   <body>
     <header>
-      <input type="search" name="episode-search-input" id="episode-search-input" />
+      <!--select menu for all shows-->
+      <select name="show-select-input" id="show-select-input">
+        <option value="">--Please Choose a Show--</option>
+      </select>
 
-      <label for="search" id="episode-search-label">Display 01/73 episodes</label>
-      
       <!--select menu for all the episodes-->
-      
       <select name="episode-select" id="episode-select-input">
         <option value="">--Please choose an episode--</option>
       </select>
+      <!--search box for episodes-->
+      <input
+        type="search"
+        name="episode-search-input"
+        id="episode-search-input"
+        placeholder="Search your item"
+      />
+      <label for="search" id="episode-search-label"
+        ></label
+      >
 
-      <select name="show-select-input" id="show-select-input">
-        <option value="">--Please choose a show--</option>
-      </select>
-
-      <button id="selectReset">Show All Episodes</button>
+      <!--resetting select button-->
+      <button id="selectReset">Show All Episodes of this Program</button>
     </header>
+
     <div id="root"></div>
+
     <footer>
       <p>
         Information source from
         <a href="https://www.tvmaze.com/" target="_blank">Tvmaze</a>
       </p>
     </footer>
-    <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
-    <!-- <script src="episodes.js"></script>
-    <script src="createImg.js"></script>
-    <script src="handleSearch.js"></script>
-    <script src="/createEpisodeCode.js"></script> -->
 
     <!-- Loads YOUR javascript code -->
     <script src="script.js" type="module"></script>

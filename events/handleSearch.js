@@ -10,7 +10,7 @@ export default function handleSearch(event, allEpisodes) {
 
   updateSearchBarLabel(filteredEpisodes); //updating search bar
 
-  displayFilteredEpisodes(allEpisodes, filteredEpisodes); //displaying our filtered episodes
+  displayFilteredEpisodes(allEpisodes, filteredEpisodes); //displaying our filtered episodes in page
 
   displayFilteredOptions(allEpisodes, filteredEpisodes);
 } //displaying our filtered  options in the select menu

@@ -1,3 +1,4 @@
+//fetching api data for show selection
 export default async function fetchAPIData(showId) {
   let response = await fetch(`https://api.tvmaze.com/shows/${showId}/episodes`);
   let jsonData = await response.json();
