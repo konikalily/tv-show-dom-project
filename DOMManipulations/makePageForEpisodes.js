@@ -5,7 +5,7 @@ import filterEpisodes from "./filterEpisodes.js";
 
 export default function makePageForEpisodes(allEpisodes) {
   const episodeSearchLabel = document.getElementById("episode-search-label"); //grabbing input from users
-  episodeSearchLabel.innerText = `Displaying ${filterEpisodes.length} /of ${allEpisodes.length} Episodes`;
+  episodeSearchLabel.innerText = `Displaying ${allEpisodes.length} /of ${allEpisodes.length} Episodes`;
 
   createEpisodeOptions(allEpisodes);
   createEpisodeCards(allEpisodes);//for single episodes

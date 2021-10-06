@@ -8,7 +8,7 @@ import displayFilteredOptions from "../DOMManipulations/displayFilteredOptions.j
 export default function handleSearch(event, allEpisodes) {
   const filteredEpisodes = filterEpisodes(event, allEpisodes);
 
-  updateSearchBarLabel(filteredEpisodes); //updating search bar
+  updateSearchBarLabel(filteredEpisodes, allEpisodes); //updating search bar
 
   displayFilteredEpisodes(allEpisodes, filteredEpisodes); //displaying our filtered episodes in page
 

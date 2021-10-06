@@ -7,13 +7,17 @@ export default function filterEpisodes(event, allEpisodes) {
   // box is in the episode summary or the episode name
   const filteredEpisodes = allEpisodes.filter((episode) => {
     const nameLowerCase = episode.name.toLowerCase();
-    const summaryLowerCase = episode.summary.toLowerCase();
+    const summaryLowerCase =
+      episode.summary === null ? " " : episode.summary.toLowerCase();
 
     if (
       nameLowerCase.includes(lowerCaseInput) ||
       summaryLowerCase.includes(lowerCaseInput)
-    );
-    return episode;
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   });
 
   return filteredEpisodes;
